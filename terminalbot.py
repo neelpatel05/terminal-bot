@@ -1,4 +1,5 @@
 from pexpect import pxssh
+from sys import exit
 
 class Client:
 
@@ -12,6 +13,7 @@ class Client:
              self.session=ssh
          except Exception as e:
              print(e)
+             exit()
 
     def sendCommand(self,cmd):
         self.session.sendline(cmd)
